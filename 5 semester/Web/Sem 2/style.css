@@ -1,0 +1,21 @@
+body {
+    background-color: lightskyblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+#mainDiv {
+    background-color: aliceblue;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+#nameEmail {
+    margin-left: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

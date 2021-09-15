@@ -1,14 +1,12 @@
 body {
     background-color: lightskyblue;
-}
-
-* {
     font-size: 20px;
 }
 
 h1 {
     text-align: center;
     padding: 30px 0 30px 0px;
+    font-size: 40px;
 }
 
 #mainDiv {
@@ -18,7 +16,7 @@ h1 {
     margin: 0 auto;
 }
 
-#logPass {
+.logPass {
     margin-left: 400px;
 }
 
@@ -33,3 +31,4 @@ div.field label {
     width: 100px;
     height: 25px;
 }
+

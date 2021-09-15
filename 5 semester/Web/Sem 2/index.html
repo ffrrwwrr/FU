@@ -11,11 +11,43 @@
     <div id="mainDiv">
         <h1>Tell us something positive that happened to you today</h1>
 
-        <div id="nameEmail">
-            <p>Name: <input type="text"></p>
-            <p>E-mail: <input type="text"></p>
-            <p>Write something: <input type="text"></p>
-        </div>
+        <form id="logPass" action="" method="post">
+            <div class="field">
+                <label>Login: </label>
+                <input type="text" name="login">
+            </div>
+
+            <div class="field">
+                <label>Password: </label>
+                <input type="password" name="password">
+            </div>
+
+            <div class="field">
+                <label>Text: </label>
+                <input type="text">
+            </div>
+
+            <div class="field">
+                <p>Sex: <select style="margin-left: 39px">
+                    <option value="man">Man</option>
+                    <option value="woman">Woman</option>
+                </select></p>
+            </div>
+
+            <div class="field">
+                <label>Sex: </label>
+                <label for="man">Man</label>
+                <input type="radio" id="man" value="man">
+                <label for="woman">Woman</label>
+                <input type="radio" id="woman" value="woman">
+            </div>
+        </form>
+
+
+
+
+
+
 
     </div>
 

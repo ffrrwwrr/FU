@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>Sem 2</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1 id="h11">Good Vibes Form</h1>
-
     <div id="mainDiv">
         <h1>Tell us something positive that happened to you today</h1>
 
@@ -34,22 +35,21 @@
                 </select></p>
             </div>
 
-            <div class="field">
-                <label>Sex: </label>
-                <label for="man">Man</label>
-                <input type="radio" id="man" value="man">
-                <label for="woman">Woman</label>
-                <input type="radio" id="woman" value="woman">
+            <p>Please select your preferred contact method:</p>
+            <div>
+                <input type="radio" id="contactChoice1"
+                       name="contact" value="email">
+                <label for="contactChoice1">Email</label>
+
+                <input type="radio" id="contactChoice2"
+                       name="contact" value="phone">
+                <label for="contactChoice2">Phone</label>
+
+                <input type="radio" id="contactChoice3"
+                       name="contact" value="mail">
+                <label for="contactChoice3">Mail</label>
             </div>
         </form>
-
-
-
-
-
-
-
     </div>
-
 </body>
 </html>

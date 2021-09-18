@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Sem 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!--год, дата, время, фамилия, почта, число (в диапазоне)-->
+<body>
+    <div>
+        <h1>Приглос на др (18+)</h1>
+        <p>Фамилия Имя: <input id="name" name="name" type="text"></p>
+        <p>Дата рождения: <input id="birthDay" name="birthDay" type="text"></p>
+        <p>Почта: <input id="email" name="email" type="text"></p>
+        <button onclick="onclick1()">Отправить</button>
+    </div>
+    <script>
+        function onclick1() {
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+            alert(`Спасибо за заполнение анкеты, ${name}!\nМы скинем Вам приглашение на почту ${email}.`)
+
+        }
+    </script>
+</body>
+</html>

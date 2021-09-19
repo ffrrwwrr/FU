@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="414F356B-BAF7-A103-C96D-58CCCA02AAA8" name="Order">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>2A67AD0B-8ED5-5189-AF38-DF2DF4C87702</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="FECD0D34-56E1-F33E-B6EB-01B6FF8B1773">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>F255C695-5A38-13BF-3EF1-143E97251049</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Locator" id="8FF1C665-1EFD-FC2A-3A16-95FD204727FB">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>EBB71E5F-D179-012B-27A1-978DC98A27C0</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_ID" id="1D54B0AF-993E-36DD-AC7A-0C2A93F1D796">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>2DF866CF-C734-9CB1-920F-10D23D1E43C9</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5FC71D2-EFB5-F459-1D71-7124AAE5DB7D" referredColumn="19C4DB21-F320-8730-BF40-9C53D6FB1C23"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FD5748CD-8555-54B3-46A1-E0B358669CD6" name="Order_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>B2808806-369C-40E0-CC16-91F794291486</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FECD0D34-56E1-F33E-B6EB-01B6FF8B1773"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BA71D868-B9A1-6B37-F360-F90A7440BB86" name="Order_Employee_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>34127A64-629A-413C-D7C4-EAAEB544D486</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D54B0AF-993E-36DD-AC7A-0C2A93F1D796"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3D370207-EECE-C334-74A4-FAE30855CBCF" name="Employee">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:25:26 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="73283935-9239-EF32-D3B1-14FE2F579688">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:25:33 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="First name" id="17D5A06A-7CFE-C858-ED34-97829322ADE5">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:25:38 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Last name" id="F5CAAC4B-286A-33C5-69BA-82FF646F14D3">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:25:50 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Phone number" id="BA914491-AEB8-F68E-9953-C41E08330ECF">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:25:58 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID1" id="807D61FF-A0A9-8112-C013-650AD21D1972">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:29:04 UTC</createdTime>
+<generatorID>7C68CCE2-FB2D-A053-5AD8-614906E8E189</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<referedAttribute>E33E3A9E-19FF-F662-19D3-20F058CA0951</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D29A83CD-FA4D-F813-D285-2F36E9134D49" name="Employee PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:25:37 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>73283935-9239-EF32-D3B1-14FE2F579688</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

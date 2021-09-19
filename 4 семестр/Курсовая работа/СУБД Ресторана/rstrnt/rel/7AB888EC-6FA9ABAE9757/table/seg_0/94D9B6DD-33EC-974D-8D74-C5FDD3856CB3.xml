@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="94D9B6DD-33EC-974D-8D74-C5FDD3856CB3" name="Ingredients">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>A3338D1C-82A8-EB57-FC80-061788756458</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="36058E7A-B0D2-F692-134B-8EC4AB063112">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>8D8A7530-63A6-51E3-F7F1-C28095A684BB</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Name" id="4705A2A7-E416-C8E8-6A00-978D53759F37">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>0884030A-9EF5-635C-197F-E8B9DDA683E6</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Unit_price" id="6F384233-BEAD-9969-7B6F-F3F9CD74F150">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>3F26EA8A-9A67-9A1E-CCE5-5E8D1C895846</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Unit_ID" id="D508F031-DFEB-576C-F0A3-E232CFB7A600">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>B55CE11C-37EB-6689-2A51-4909EBD50068</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E41D76B9-5DE0-54F9-7D7C-1FE78F414349" referredColumn="4D4CFFA7-4F84-BD6E-2872-132DA6951F28"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0CC4CD8D-A10E-10AB-4548-A45287ECB7B8" name="Ingredients_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>4A881AAA-8685-501D-6643-B79A5F6DF49A</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36058E7A-B0D2-F692-134B-8EC4AB063112"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="310B0D69-1C65-1984-AB8F-289CE11379D3" name="Ingredients_Unit_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>6C2F3CC1-9FDA-AD9E-899B-B91ED0D70771</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D508F031-DFEB-576C-F0A3-E232CFB7A600"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

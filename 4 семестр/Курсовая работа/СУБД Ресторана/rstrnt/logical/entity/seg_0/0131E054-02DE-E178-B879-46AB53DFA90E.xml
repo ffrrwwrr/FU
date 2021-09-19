@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0131E054-02DE-E178-B879-46AB53DFA90E" name="Dish_ingredients">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:28:05 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="0517D16B-F65F-6112-A2FC-54FBA0489C87">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:28:48 UTC</createdTime>
+<generatorID>87020428-5114-C493-1652-F9EF8F94EA20</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<referedAttribute>8D8A7530-63A6-51E3-F7F1-C28095A684BB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID1" id="8ABB8E7A-76B8-AC18-6716-9776BC4F7488">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:28:51 UTC</createdTime>
+<generatorID>8947DE35-ABF5-BB80-D11F-6C3792905078</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<referedAttribute>3998535E-633B-E4A3-0E6D-2B75A6FDE4C2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3C96FB45-EDF2-D31F-4537-7810A1F7F479" name="Dish_ingredients PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:28:48 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<engineerTo>
+<item key="7AB888EC-46FA-2A5D-3016-6FA9ABAE9757" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0517D16B-F65F-6112-A2FC-54FBA0489C87</attributeRef>
+<attributeRef>8ABB8E7A-76B8-AC18-6716-9776BC4F7488</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

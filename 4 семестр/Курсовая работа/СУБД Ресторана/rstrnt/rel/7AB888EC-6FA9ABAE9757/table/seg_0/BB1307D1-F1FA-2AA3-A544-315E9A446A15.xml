@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BB1307D1-F1FA-2AA3-A544-315E9A446A15" name="Dish_ingredients">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>0131E054-02DE-E178-B879-46AB53DFA90E</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Ingredients_ID" id="54D85AA5-2F82-6EDC-1892-AEE9371608CB">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>0517D16B-F65F-6112-A2FC-54FBA0489C87</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2C81BF8F-66A1-2B82-8A5B-B941D6740D6A" referredColumn="36058E7A-B0D2-F692-134B-8EC4AB063112"/>
+</associations>
+</Column>
+<Column name="Dish_ID" id="0DB484FE-69F5-1B9E-1C6F-2D0179A34691">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>8ABB8E7A-76B8-AC18-6716-9776BC4F7488</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CBECADD4-5445-6A95-A783-F4419194CD19" referredColumn="36159BE4-743E-959C-67B0-E6297846DACF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="87BB0BCB-EFD4-295C-17CD-8EA98A3B2A1A" name="Dish_ingredients_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>3C96FB45-EDF2-D31F-4537-7810A1F7F479</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54D85AA5-2F82-6EDC-1892-AEE9371608CB"/>
+<colUsage columnID="0DB484FE-69F5-1B9E-1C6F-2D0179A34691"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F18DB8EE-BF64-68EF-8416-B3CEC48C9DBB" name="Dish_ingredients_Ingredients_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>87020428-5114-C493-1652-F9EF8F94EA20</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54D85AA5-2F82-6EDC-1892-AEE9371608CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F3626AE8-1CCD-0EBB-67D5-E1F1A3F827A5" name="Dish_ingredients_Dish_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>8947DE35-ABF5-BB80-D11F-6C3792905078</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0DB484FE-69F5-1B9E-1C6F-2D0179A34691"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

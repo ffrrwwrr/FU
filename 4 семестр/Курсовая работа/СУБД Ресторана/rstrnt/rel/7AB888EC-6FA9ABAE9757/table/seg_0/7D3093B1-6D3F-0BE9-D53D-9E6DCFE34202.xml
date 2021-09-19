@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7D3093B1-6D3F-0BE9-D53D-9E6DCFE34202" name="Unit">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>21BD173F-0AF8-7D8E-DE03-5B3124CC004B</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="4D4CFFA7-4F84-BD6E-2872-132DA6951F28">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>88BADB0A-6E65-42CB-4372-A3849E7681B8</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Unit" id="37F81421-FF89-77E8-2DA8-549D6FB02820">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>22030845-AE66-7805-7A16-A02F689CAC16</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B5998857-FCFB-C298-4F00-B40978AC120C" name="Unit_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>D95C9078-1184-0358-6D13-B5E06B30D0C4</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4D4CFFA7-4F84-BD6E-2872-132DA6951F28"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

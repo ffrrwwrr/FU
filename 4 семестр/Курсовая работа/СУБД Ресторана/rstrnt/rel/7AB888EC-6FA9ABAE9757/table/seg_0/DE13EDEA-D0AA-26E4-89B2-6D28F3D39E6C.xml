@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE13EDEA-D0AA-26E4-89B2-6D28F3D39E6C" name="Dish_order">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<ordsAlias>relation_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Dish_ID" id="A0392A0B-8370-C57F-58E6-BA683E968A75">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60640031-B302-E0A3-2D04-1C1355E04287" referredColumn="36159BE4-743E-959C-67B0-E6297846DACF"/>
+</associations>
+</Column>
+<Column name="Order_ID" id="D7A02923-EAFE-E8C8-68F0-69580F25D0A4">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1EA731AE-4E50-05B4-C5AF-B1E3EFE6AF06" referredColumn="FECD0D34-56E1-F33E-B6EB-01B6FF8B1773"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F00E5EFC-76D0-CDD5-C0E7-33A83830C288" name="Relation_7_PK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<ownerDesignName>rstrnt</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0392A0B-8370-C57F-58E6-BA683E968A75"/>
+<colUsage columnID="D7A02923-EAFE-E8C8-68F0-69580F25D0A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3339E17B-1FE4-824B-C800-BFBCFC816451" name="Relation_7_Dish_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>01143E8D-5705-DFF9-3037-EEAD0B9D5165</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0392A0B-8370-C57F-58E6-BA683E968A75"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="63F15171-F660-AB52-35BA-6F59F90BA457" name="Relation_7_Order_FK">
+<createdBy>user</createdBy>
+<createdTime>2021-04-29 19:30:44 UTC</createdTime>
+<generatorID>01143E8D-5705-DFF9-3037-EEAD0B9D5165</generatorID>
+<ownerDesignName>rstrnt</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7A02923-EAFE-E8C8-68F0-69580F25D0A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

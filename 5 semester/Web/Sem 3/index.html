@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <title>Sem 3</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <!--год, дата, время, фамилия, почта, число (в диапазоне)-->
 <body>
-    <div>
-        <h1>Приглос на др (18+)</h1>
-        <p>Фамилия Имя: <input id="name" name="name" type="text"></p>
-        <p>Дата рождения: <input id="birthDay" name="birthDay" type="text"></p>
-        <p>Почта: <input id="email" name="email" type="text"></p>
-        <button onclick="onclick1()">Отправить</button>
-    </div>
-    <script>
-        function onclick1() {
-            const name = document.getElementById("name").value
-            const email = document.getElementById("email").value
-            alert(`Спасибо за заполнение анкеты, ${name}!\nМы скинем Вам приглашение на почту ${email}.`)
+    <div class="main">
+        <h2>Приглашение на День Рождение! (18+)</h2>
 
-        }
-    </script>
+        <div class="field">
+           <label for="name">ФИО: </label>
+           <input type="text" id="name">
+        </div>
+
+        <div class="field">
+           <label for="birthDay">Дата рождения: </label>
+           <input type="text" id="birthDay">
+        </div>
+
+        <div class="field">
+           <label for="email">Эл. почта: </label>
+           <input type="text" id="email">
+        </div>
+
+        <div id="divKnopki">
+            <button class="button" onclick="onclick1()">Отправить</button>
+        </div>
+     </div>
 </body>
 </html>

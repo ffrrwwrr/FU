@@ -1,0 +1,8 @@
+http://www.youtube.com
+http://regex.ru
+https://regex.com
+1http://regex.ru
+http://www,regex,ru
+http://www.regex,ru
+http://www.regex.c1m
+http://www.regex.cOm

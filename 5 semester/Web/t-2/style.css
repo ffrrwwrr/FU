@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #main {
     width: 380px;
     border: 2px solid;
@@ -12,6 +13,24 @@
 
 .field {
     padding: 20px 0 0 40px;
+=======
+.main {
+    border: 2px solid;
+    border-radius: 50px;
+    padding: 10px 50px 50px 50px;
+    margin: 10% 35%;
+    height: 50%;
+    width: 300px;
+    float: left;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label {
+    float:left; 
+    padding-right: 10px;
+    padding-bottom: 10px;
+>>>>>>> 7276a42aea78f4fe37f2d42f43ec5a4b9d4666ac
 }
 
 button {
@@ -19,12 +38,16 @@ button {
     transition-duration: 0.4s;
     font-size: 20px;
     border-radius: 6px;
+<<<<<<< HEAD
     margin-bottom: 10px;
+=======
+>>>>>>> 7276a42aea78f4fe37f2d42f43ec5a4b9d4666ac
 }
 
 button:hover {
     background-color: cadetblue; /* Green */
     color: white;
+<<<<<<< HEAD
 }
 
 input {
@@ -37,3 +60,6 @@ input:hover {
     background-color: darkgray; /* Green */
     color: white;
 }
+=======
+}
+>>>>>>> 7276a42aea78f4fe37f2d42f43ec5a4b9d4666ac

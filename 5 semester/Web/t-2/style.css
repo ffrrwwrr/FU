@@ -1,0 +1,39 @@
+#main {
+    width: 380px;
+    border: 2px solid;
+    border-radius: 25px;
+    margin: 10% 35%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.field {
+    padding: 20px 0 0 40px;
+}
+
+button {
+    border: 2px solid cadetblue;
+    transition-duration: 0.4s;
+    font-size: 20px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: cadetblue; /* Green */
+    color: white;
+}
+
+input {
+    border: 2px solid cadetblue;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+input:hover {
+    background-color: darkgray; /* Green */
+    color: white;
+}

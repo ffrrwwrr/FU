@@ -1,14 +1,21 @@
+* {
+    font-size: 20px;
+}
+
 #data {
     background-color: beige;
     border: 2px solid;
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
+    width:700px;
 }
 
 #task {
     background-color: lavender;
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: 20px;
     padding: 10px;
+    width: 700px;
 }
+

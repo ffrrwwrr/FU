@@ -1,0 +1,14 @@
+#data {
+    background-color: beige;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#task {
+    background-color: lavender;
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 10px;
+}

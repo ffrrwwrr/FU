@@ -8,15 +8,15 @@ let links = [
         title: 'Two',
     },
     {
-        name: 'хз как будет по английски третий',
+        name: 'third',
         title: 'Three',
     },
     {
-        name: 'четвертый',
+        name: 'fourth',
         title: 'Four',
     },
     {
-        name: 'пятый',
+        name: 'fifth',
         title: 'Five',
     }
 ];

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>t-4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="inpDiv">
+        <h1>Form</h1>
+        <p>Name: <input type="text" id="inpName" placeholder="Input name ..."></p>
+        <p>Email: <input type="email" id="inpEmail" placeholder="Input email ..."></p>
+        <button onclick="store()" id="btn">Store</button>
+    </div>
+
+    <div id="outpDiv">
+        <h1>Output</h1>
+        
+    </div>
+
+    <script>
+        function store() {
+            const inputName = document.getElementById("inpName")
+            const inputEmail = document.getElementById("inpEmail")
+            const button = document.getElementById("btn")
+            const outputDiv = document.getElementById("outpDiv")
+
+            btn.onclick = function () {
+                const name = inputName.value
+                const email = inputEmail.value
+
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i)
+                    const name = localStorage.getItem(key)
+                    const email = localStorage.getItem(key)
+
+                    outputDiv.innerHTML += `Name: ${name} and Email: ${email}`
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

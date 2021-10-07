@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>t-4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="inpDiv">
+        <h1>Form</h1>
+        <p>Name: <input type="text" id="inpName" placeholder="Input name ..."></p>
+        <p>Birthday: <input type="date" id="inpBirthday"></p>
+        <p>Email: <input type="email" id="inpEmail" placeholder="Input email ..."></p>
+
+        <button onclick="store()" id="btn">Store</button>
+    </div>
+
+    <script>
+        function store() {
+            var name = document.getElementById('inpName').value
+            var birthday = document.getElementById('inpBirthday').value
+            var email = document.getElementById('inpEmail').value
+
+            const user = {
+                name: name,
+                birthday: birthday,
+                email: email
+            }
+
+            localStorage.setItem('user', JSON.stringify(user))
+
+            var regEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+            var regName = /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/
+
+            if(regEmail.test(email) == false) {
+                alert('Введите корректный e-mail!');
+                return false;
+            }
+
+            if(regName.test(name) == false) {
+                alert('Введите корректное имя!');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>t-5</title>
+</head>
+<body>
+
+    
+
+    <p>Input textarea <input id="mainTextarea" type="textarea"></p>
+    <button onclick="addText()">Add text</button>
+    <button onclick="deleteText()">Delete text</button>
+    <button onclick="editText()">Edit text</button>
+    <table id="mainTable" border="1"></table>
+
+
+
+    <script>
+        let mainTable = document.querySelector('#mainTable')
+
+        function addText() {
+            let newText = document.getElementById('mainTextarea').value
+            let newTr = document.createElement('tr')
+            let newTd = document.createElement('td')
+            
+            newTd.innerHTML = newText
+            newTr.appendChild(newTd)
+            mainTable.appendChild(newTr)
+        }
+
+        function deleteText () {
+            
+        }
+    </script>
+</body>
+</html>

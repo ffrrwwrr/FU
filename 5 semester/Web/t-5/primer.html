@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input id="text" type="text">
+    <button  onclick="addLi()"></button>
+    <ul id="mainUl">
+        <li>1</li>
+    </ul>
+    
+    <script>
+        let parent = document.querySelector('#mainUl');
+
+        function addLi () {
+            let li = document.createElement('li');
+            let text = document.getElementById('text').value
+            li.innerHTML = text;
+            mainUl.appendChild(li);
+        }
+    </script>
+</body>
+</html>

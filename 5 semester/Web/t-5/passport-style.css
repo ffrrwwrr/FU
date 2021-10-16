@@ -1,0 +1,27 @@
+body fieldset {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.form {
+    background-color: whitesmoke;
+    width: 300px;
+    padding: 5px;
+    margin: 5px;
+    border: solid 1px;
+    border-radius: 4px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+    padding: 2px;
+}
+
+#resTable tr td {
+    margin: 5px;
+    padding: 5px;
+}

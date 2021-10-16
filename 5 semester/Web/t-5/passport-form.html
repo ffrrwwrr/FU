@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>t-5</title>
+    <link rel="stylesheet" href="passport-style.css">
+</head>
+<body>
+
+    <fieldset>
+        <legend>Добавить данные</legend>
+        <div id="addRow" class="form">
+            <label for="surname">Фамилия</label>
+            <input id="surname" type="text">
+            <label for="name">Имя</label>
+            <input id="name" type="text">
+            <label for="patronymic">Отчество</label>
+            <input id="patronymic" type="text">
+            <label for="buttonAdd"></label>
+            <button id="buttonAdd" onclick="sendForm()">Отправить</button>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Удалить данные</legend>
+        <div id="deleteRow" class="form">
+            <label for="numDel">Номер по списку</label>
+            <input id="numDel" type="text">
+            <label for="buttonDel"></label>
+            <button id="buttonDel" onclick="sendForm()">Удалить</button>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Изменить данные</legend>
+        <div id="changeRow" class="form">
+            <label for="numEdit">Номер по списку</label>
+            <input id="numEdit" type="text">
+            <label for="buttonEdit"></label>
+            <button id="buttonEdit" onclick="sendForm()">Изменить</button>
+        </div>
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>База данных</legend>
+        <div id="resDiv" class="form">
+            <table id="resTable" border="1">
+                <tr>
+                    <td>№</td>
+                    <td>Фамилия</td>
+                    <td>Имя</td>
+                    <td>Отчество</td>
+                </tr>
+            </table>
+        </div>
+    </fieldset>
+
+    <script src="passport-script.js"></script>
+</body>
+</html>

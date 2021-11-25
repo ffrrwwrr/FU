@@ -1,0 +1,32 @@
+{
+    "mosque": [
+        {
+            "name": "Московская Соборная мечеть",
+            "address": "Выползов переулок, дом 7",
+            "telephoneNumber": "(495) 681-49-04",
+            "email": "info@mihrab.ru",
+            "website": "mihrab.ru"
+        },
+        {
+            "name": "Историческая мечеть",
+            "address": "Большая Татарская улица, дом 28, строение 1,2",
+            "telephoneNumber": "(495) 951-84-48",
+            "email": "",
+            "website": "manar.ru"
+        },
+        {
+            "name": "Мемориальная мечеть",
+            "address": "Минская улица, дом 2Б",
+            "telephoneNumber": "",
+            "email": "vopros@umma.ru",
+            "website": "umma.ru"
+        },
+        {
+            "name": "Смежные мечети «Ярдям» и «Инам»",
+            "address": "улица Хачатуряна, дом 8",
+            "telephoneNumber": "(499) 903-60-88",
+            "email": "",
+            "website": "yardyam.ru"
+        }
+    ]
+}

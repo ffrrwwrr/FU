@@ -1,0 +1,107 @@
+<!DOCTYPE HTML> 
+<html> 
+ 
+<head>
+    <meta charset = "UTF-8">
+    <title>t-7</title>
+    <style>
+        #main {padding: 10px; margin: 10px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 20px; background: linear-gradient(to bottom left, #99ffcc 0%, #ffccff 100%)}
+        #main button {border-radius: 8px; font-size: 20px; -webkit-transition-duration: 0.4s; transition-duration: 0.4s; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
+        #main button:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)}
+        #main table{table-layout: fixed; width: 100%}
+        #main table th {font-weight: bold; padding: 5px; background: #efefef; border: 1px solid #dddddd}
+        #main table td{padding: 5px 10px; border: 1px solid #eee; text-align: left}
+        #main table tbody tr:nth-child(odd){background: #fff}
+        #main table tbody tr:nth-child(even){background: #F7F7F7}
+    </style>
+</head>
+ 
+<body>   
+    <div id="main">
+        <p id = "p"></p>
+        <button onclick = "onClickButton()">Click</button><br><br>
+        <table id = "table"></table>
+    </div>
+    
+    <script>
+        
+        var p = document.getElementById("p");
+         
+        var jsonMosque = [
+        {
+            "name": "Московская Соборная мечеть",
+            "address": "Выползов переулок, дом 7",
+            "telephoneNumber": "(495) 681-49-04",
+            "email": "info@mihrab.ru",
+            "website": "mihrab.ru"
+        },
+        {
+            "name": "Историческая мечеть",
+            "address": "Большая Татарская улица, дом 28, строение 1,2",
+            "telephoneNumber": "(495) 951-84-48",
+            "email": " ",
+            "website": "manar.ru"
+        },
+        {
+            "name": "Мемориальная мечеть",
+            "address": "Минская улица, дом 2Б",
+            "telephoneNumber": " ",
+            "email": "vopros@umma.ru",
+            "website": "umma.ru"
+        },
+        {
+            "name": "Смежные мечети «Ярдям» и «Инам»",
+            "address": "улица Хачатуряна, дом 8",
+            "telephoneNumber": "(499) 903-60-88",
+            "email": " ",
+            "website": "yardyam.ru"
+        }
+        ];
+        
+        p.innerHTML = "Содиков Фарход, ПИ19-1" + "<br><br>" + "Данные из JSON-файла: " + "<br><br>"
+                + "1. " + JSON.stringify(jsonMosque[0]) + "<br>" 
+                + "2. " + JSON.stringify(jsonMosque[1]) + "<br>"
+                + "3. " + JSON.stringify(jsonMosque[2]) + "<br>"
+                + "4. " + JSON.stringify(jsonMosque[3]) + "<br><br>"
+                + "Нажмите на кнопку для конвертации JSON-файла в HTML-таблицу ↓<br>"
+         
+        function onClickButton() {
+            var cols = [];
+             
+            for (var i = 0; i < jsonMosque.length; i++) {
+                for (var k in jsonMosque[i]) {
+                    if (cols.indexOf(k) === -1) {
+                        cols.push(k);
+                    }
+                }
+            }
+            
+            var table = document.createElement("table");
+            var tr = table.insertRow(-1);
+             
+            for (var i = 0; i < cols.length; i++) {
+                var theader = document.createElement("th");
+                theader.innerHTML = cols[i];
+                tr.appendChild(theader);
+            }
+            
+
+            for (var i = 0; i < jsonMosque.length; i++) {
+                 
+                trow = table.insertRow(-1);
+                for (var j = 0; j < cols.length; j++) {
+                    var cell = trow.insertCell(-1);
+                    cell.innerHTML = jsonMosque[i][cols[j]];
+                }
+            }
+            
+            var el = document.getElementById("table");
+            el.innerHTML = "";
+            el.appendChild(table);
+        }
+        
+        
+
+    </script>
+</body> 
+</html>

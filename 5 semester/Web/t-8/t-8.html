@@ -1,0 +1,257 @@
+<html>
+	<style>
+        body {background: white}
+        table, th, td {border: 0px solid black}
+        th {cursor: pointer}
+        p {font-family: "Gill Sans", sans-serif}
+        .introduction {
+            font-family: "Gill Sans", sans-serif;
+            text-align: center;
+            font-size: 100%;
+        }
+        div {
+            font-family: "Gill Sans", sans-serif;
+            padding: 9px 15px;
+        }
+        table {
+            font-family: "Gill Sans", sans-serif;
+            text-align: left;
+            border-collapse: collapse;
+            border-spacing: 7px;
+            background: #E1E3E0;
+            border-radius: 15px;
+        }
+        .people {
+            display: table;
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid;
+            padding: 10px;
+        }
+        th {padding: 7px; font-size: 100%}
+        td {
+            width :75px;
+            padding: 7px;
+            color: black;
+            font-size: 100%;
+        }
+        input[type=text] {
+            border: 2px;
+            border-radius: 4px;
+        }
+        input[type=date] {
+            border: 2px;
+            border-radius: 4px;
+        }
+        textarea {
+            border: 2px;
+            border-radius: 4px;
+        }
+        select {
+            border: 2px;
+            border-radius: 4px;
+            font-family: "Gill Sans", sans-serif;
+        }
+        input:invalid {border: 1px solid red}
+        input:valid {border: 1px solid black}
+        button {
+            font-family: "Gill Sans", sans-serif;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        #srt {
+            border-radius: 3px;
+            height: 26px;
+        }
+        #graph {display: inline; background-size: 800px 500px; border: 1px}
+    </style>
+<head>
+	<meta charset="UTF-8">
+	<title>t-8</title>
+</head>
+	<body>
+        <h2 align = 'center'>Содиков Фарход, ПИ19-1, Mosque</h2>
+		<div align="center">Input number of column: 
+			<input id = 'srt' placeholder="number">
+            <button id = "srt_btn" type="button" onClick="onClickHandler()">Sort</button>
+        </div>
+		<br>
+		<div id='dta' align="center"></div>
+		<br>
+        <div align = "center">
+            <canvas id="graph" width="800" height="500"></canvas>
+        </div>
+
+		<div id="intro_div">
+            <h3 align = "center">Statistics table of the location of objects by districts </h3>
+        </div>
+        <div id="empty"></div>
+        <table id = statistics align="center">
+            <tr>
+                <th><b>AdmArea</b></th>
+                <th><b>Mosque</b></th>
+                <th><b>Number</b></th>
+              </tr>
+        </table>
+  </body>
+  </html>
+
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script> 
+
+const сoordinates_ = Array();
+	$.ajax(
+        {
+		url: 'https://apidata.mos.ru/v1/datasets/2266/features?api_key=41fe440e3e0f56b85a09f3da8b71ac02',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        type: "GET",
+        dataType: "json",
+        success: function(data)
+        {
+			var s = "<table border width=500 id='table'> <tr><th>Name<th>Width<th>Longitude<th>AdmArea<th>District"
+			var areas = [];
+
+			$.each(data.features, function(idx, features){
+				wd = features.geometry.coordinates.toString().split(",")[1]
+                ln = features.geometry.coordinates.toString().split(",")[0]
+				l2 =  Math.round(700 * (wd - 55.5)/(55.9-55.5))
+                l1 = Math.round(350 * (ln - 37.4)/(37.8-37.4))
+				namel = features.properties.Attributes.ObjectName
+				// сoordinates_.push([l1 + 179, 700-l2, namel.split(" ")[1]])
+                сoordinates_.push([l1 + 179, 700-l2, namel])
+                area_ = features.properties.Attributes.AdmArea
+				areas.push(area_);
+
+                district_ = features.properties.Attributes.District
+				if (district_.split(" ")[0] === 'район')
+                {
+					district_ = district_.split(" ").reverse().join(" ") ;
+				}
+				else 
+                {
+					district_ = district_;
+				}
+				s += "<tr><td>" + namel + "<td>" + wd + "<td>" + ln + "<td>" + area_ + "<td>" + district_ 
+			})
+		s += "</table>"
+		document.getElementById("dta").innerHTML = s
+		function onlyUnique(value, index, self) {return self.indexOf(value) === index;}
+
+		var areas = areas.filter(onlyUnique);
+        const neighborhood = new Object();
+
+		$.each(areas,function(index, value){neighborhood[value] = [];});
+
+		createСircles()
+
+		$("#table  tr").each(function(i){
+            if(i==0) return;
+            var vas = $.trim($(this).find("td").eq(0).html());
+            neighborhood[$.trim($(this).find("td").eq(3).html())].push(vas)
+        });
+
+$.each(areas,function(index, value){
+            res11 = "<td>" + value + "</td>";
+            res12 = "<td>" + neighborhood[value]+ "</td>";
+            res13 = "<td>" + neighborhood[value].length  + "</td>";
+            var row1 = $('<tr>')
+                .append(res11)
+                .append(res12)
+                .append(res13)
+            $('#statistics').append(row1); 
+        })
+
+        res11 = "<td>" + "Юго-восточный административный округ" + "</td>";
+        res12 = "<td>" + "-"+ "</td>";
+        res13 = "<td>" + "0"  + "</td>";
+        var row = $('<tr>')
+                .append(res11)
+                .append(res12)
+                .append(res13)
+        $('#statistics').append(row); 
+
+        res11 = "<td>" + "Северо-западный административный округ" + "</td>";
+        res12 = "<td>" + "-"+ "</td>";
+        res13 = "<td>" + "0"  + "</td>";
+        var row = $('<tr>')
+                .append(res11)
+                .append(res12)
+                .append(res13)
+        $('#statistics').append(row);
+
+        res11 = "<td>" + "Зеленоградский административный округ" + "</td>";
+        res12 = "<td>" + "-"+ "</td>";
+        res13 = "<td>" + "0"  + "</td>";
+        var row = $('<tr>')
+                .append(res11)
+                .append(res12)
+                .append(res13)
+        $('#statistics').append(row);
+
+        res11 = "<td>" + "Троицкий административный округ" + "</td>";
+        res12 = "<td>" + "-"+ "</td>";
+        res13 = "<td>" + "0"  + "</td>";
+        var row = $('<tr>')
+                .append(res11)
+                .append(res12)
+                .append(res13)
+        $('#statistics').append(row);
+	}
+})
+
+function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("table");
+                switching = true;
+                dir = "asc";
+                while (switching) {
+                    switching = false;
+                    rows = table.getElementsByTagName("tr");
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        shouldSwitch = false;
+                        x = rows[i].getElementsByTagName("td")[n];
+                        y = rows[i + 1].getElementsByTagName("td")[n];
+                        if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if (dir == "desc") {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        switchcount ++;
+                    } else {
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+	
+	function onClickHandler() {
+	  const n = document.getElementById('srt').value;
+	  sortTable(n-1);
+	}
+
+	function createСircles(){
+        var canvas = document.getElementById('graph');
+        var ctx = canvas.getContext('2d');
+	
+        $(сoordinates_).each(function(idx, p) {
+            ctx.beginPath();
+            ctx.arc(p[0], p[1], 2, 0, 2 * Math.PI);
+			ctx.fillStyle = "green";
+			ctx.fill();
+            ctx.stroke();
+        })
+    }
+
+</script>

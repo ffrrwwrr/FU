@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача к зачёту №37</title>
+</head>
+
+<style>
+    body {background-color: whitesmoke;}
+    label{padding: 10px;}
+    h2 {padding: 10px;}
+    h3 {padding: 10px;}
+    input {
+        display: block;
+        width: 25%;
+        height: calc(2.25rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #bdbdbd;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        margin: 10px;
+      }
+
+    button {
+        background-color: #555555;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        border-radius: 4px;
+        margin: 10px;
+    }
+
+    button:hover {
+        background-color: white; /* Green */
+        color: #555555;
+    }
+</style>
+
+<body>
+    <h2>Содиков Фарход, ПИ19-1<br>Контрольная работа<br>Задача №37</h2>
+    <h3>Задание: В окне 3 элемента: 2 элемента для ввода текста и кнопка. <br> Вводится две строки. По нажатию кнопки формируется новая строка, в которой чередуются символы из введенных строк. <br> Результат выводится с помощью alert.</h3>
+    <div id="inpDiv">
+        <label>First text: <input type="text" id="firstText" placeholder="Input text ..."></label>
+        <label>Second text: <input type="text" id="secondText" placeholder="Input text ..."></label>
+        <button onclick="knopka()" id="btn">Click</button>
+    </div>
+    
+<script>   
+    function knopka() {
+    
+    var m = (a, b) => a.length ? [a[0], ...m(b, a.slice(1))] : b;
+    var string1 = document.getElementById('firstText').value;
+    var string2 = document.getElementById('secondText').value;
+    var mix = m(string1, string2);
+
+    alert(mix.join(''))
+    console.log(mix.join(''));  
+}
+</script>
+</body>
+</html>

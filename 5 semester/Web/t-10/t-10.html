@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            background: palevioletred;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th {
+            cursor: pointer;
+        }
+        p {
+            font-family: "Gill Sans", sans-serif;
+        }
+        .introduction {
+            font-family: "Gill Sans", sans-serif;
+            text-align: center;
+            font-size: 100%;
+        }
+        div {
+            font-family: "Gill Sans", sans-serif;
+            padding: 9px 15px;
+        }
+
+        table {
+            width: 90%;
+            margin-bottom: 20px;
+            border: 5px solid #fff;
+            border-top: 5px solid #fff;
+            border-bottom: 3px solid #fff;
+            border-collapse: collapse; 
+            outline: 3px solid #ffd300;
+            font-size: 15px;
+            background: #fff!important;
+            padding-bottom: 20px;
+        }
+        table th {
+            font-weight: bold;
+            padding: 7px;
+            background: #ffd300;
+            border: none;
+            text-align: left;
+            font-size: 15px;
+            border-top: 3px solid #fff;
+            border-bottom: 3px solid #ffd300;
+        }
+        table td {
+            padding: 7px;
+            border: none;
+            border-top: 3px solid #fff;
+            border-bottom: 3px solid #fff;
+            font-size: 15px;
+        }
+        table tbody tr:nth-child(even){
+            background: #f8f8f8!important;
+        }
+        .people {
+            display: table;
+            width: 700px;
+            margin: 0 auto;
+            border: 1px solid;
+            padding: 10px;
+        }
+
+        input[type=text] {
+            border: 2px;
+            border-radius: 4px;
+        }
+        input[type=date] {
+            border: 2px;
+            border-radius: 4px;
+        }
+        textarea {
+            border: 2px;
+            border-radius: 4px;
+        }
+        select {
+            border: 2px;
+            border-radius: 4px;
+            font-family: "Gill Sans", sans-serif;
+        }
+        input:invalid {
+            border: 1px solid red;
+        }
+
+        input:valid {
+            border: 1px solid black;
+        }
+
+        button {
+            font-family: "Gill Sans", sans-serif;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        #graph {
+            display: inline;
+            background-image: url(./maps.jpg);
+            background-size: 800px 500px;
+        }
+
+        html,   
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #myChart1 {
+            height: 60%;
+            width: 93%;
+        }
+        #myChart {
+            height: 85%;
+            width: 93%;
+        }
+        
+        .zc-ref {
+        display: none;
+        }
+
+        .outbox{
+            text-align: center;
+        }
+        .container{
+            width: 50%;
+            display: inline-block;
+        }
+    </style>
+    <head>
+        <title>t-10</title>
+        <meta charset="utf-8">
+        <link href = "https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <script src = "https://cdn.zingchart.com/zingchart.min.js"></script>
+    </head>
+    <body>
+        <h2 align='center'>Содиков Фарход, ПИ19-1, t-10</h2>
+        <div class="outbox">
+                <div id = "myChart"><a class = "zc-ref" href = "https://www.zingchart.com"></a></div>
+        </div> 
+        <div id="myChart1" class="chart--container">
+            <a class = "zc-ref" href="https://www.zingchart.com/">Powered by ZingChart</a>
+        </div>
+        <div id="empty"></div>
+        <table id=statistics align="center">
+            <tr>
+                <th><button onclick="sortTable(0, 'statistics')"><b>District</b></button></th>
+                <th><button onclick="sortTable(1, 'statistics')"><b>Points</b></button></th>
+                <th><button onclick="sortTable(2, 'statistics')"><b>Amouunt</b></button></th>
+              </tr>
+        </table>
+        <div><br></div>
+    </body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+<script>
+    function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+    }
+
+    function sortTable(n, table_name) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById(table_name);
+        switching = true;
+        dir = "asc";
+        while (switching) {
+            switching = false;
+            rows = table.getElementsByTagName("tr");
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("td")[n];
+                y = rows[i + 1].getElementsByTagName("td")[n];
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++;
+            } else {
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+    
+    сoordinates_ = Array();
+    areas = Array();
+    neighborhood = new Object();
+    $.ajax({
+        url: 'https://apidata.mos.ru/v1/datasets/60790/features?api_key=26217c03c0455d698f9635708602ee0e',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        type: "GET",
+        dataType: "json",
+        success: function(data){
+            $.each(data.features, function(idx, features) {
+
+                name_ = features.properties.Attributes.NumberOfAccessPoints
+                area_ = features.properties.Attributes.AdmArea.split(" ")[0]
+                district_ = features.properties.Attributes.District
+                if (district_.split(" ")[0] === 'район'){
+                    district_ = district_.split(" ").reverse().join(" ");
+                }
+
+                if (area_ in neighborhood){
+                    neighborhood[area_].push(name_);
+                }
+                else{
+                    neighborhood[area_] = [name_];
+                }
+            })
+
+        $.each(neighborhood,function(key, value){
+            res11 = "<td>" + key + "</td>";
+            var res12 = $('<td>')
+            $.each(value, function(idx, val){
+                if (idx % 25 === 0){
+                    res12.append("<br>")
+                };
+                if (idx === value.length-1){
+                    res12.append(val)
+                }
+                else{
+                    res12.append(val + ', ')
+                }
+            })
+            res13 = "<td>" + value.length*1  + "</td>";
+            var row1 = $('<tr>')
+                .append(res11)
+                .append(res12)
+                .append(res13)
+            $('#statistics').append(row1); 
+        });
+
+        lengthens = []
+        $.each(neighborhood, function(key, value){
+            lengthens.push(value.length)
+        });
+
+        let countryData = [
+            [Object.keys(neighborhood)[0], lengthens[0], lengthens[0]],
+            [Object.keys(neighborhood)[1], lengthens[1], lengthens[1]],
+            [Object.keys(neighborhood)[2], lengthens[2], lengthens[2]],
+            [Object.keys(neighborhood)[3], lengthens[3], lengthens[3]],
+            [Object.keys(neighborhood)[4], lengthens[4], lengthens[4]],
+            [Object.keys(neighborhood)[5], lengthens[5], lengthens[5]],
+            [Object.keys(neighborhood)[6], lengthens[6], lengthens[6]],
+            [Object.keys(neighborhood)[7], lengthens[7], lengthens[7]],
+            [Object.keys(neighborhood)[8], lengthens[8], lengthens[8]],
+            [Object.keys(neighborhood)[9], lengthens[9], lengthens[9]],
+            [Object.keys(neighborhood)[10], lengthens[10], lengthens[10]]
+            ]
+            
+        let myConfig1 = {
+            type: 'variwide',
+            globals: {
+                fontFamily: 'Lucida Sans Unicode',
+            },
+            title: {
+                text: 'Internet access in cultural centers',
+                adjustLayout: true,
+            },
+            options: {
+                data: countryData
+            },
+            plotarea: {
+                margin: 'dynamic',
+            },
+            scaleX: {
+                label: {
+                text: 'Округ',
+                bold: false,
+                },
+                item: {
+                color: '#000',
+                fontSize: 10,
+                angle: 330,
+                },
+            },
+            scaleY: {
+                guide: {
+                lineStyle: 'solid',
+                },
+            },
+            source: {
+                text: 'Source: Eurostat',
+                adjustLayout: true,
+            },
+            tooltip: {
+                padding: '10px',
+                fontSize: '12px',
+                backgroundColor: '#fff',
+                alpha: 0.9,
+                color: '#000',
+                align: 'left',
+                borderRadius: '7px',
+                borderWidth: '2px',
+                offsetY: 5,
+                shadow: true,
+                shadowDistance: 2,
+                borderColor: '%color-1',
+                placement: 'node:top',
+                callout: true,
+                text: "<span style='font-size:17px;color:%color;font-weight:bold;'> %plot-text</span><br><br>точек: <b>%data-value</b>",
+            },
+        };
+            
+            zingchart.render({
+            id: 'myChart1',
+            data: myConfig1,
+            height: '500px',
+            width: '100%',
+        });
+    }
+})
+    
+    
+</script>

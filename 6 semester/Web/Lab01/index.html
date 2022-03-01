@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lab01</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=91e8cd68-8047-417f-a37b-c7b3f4543208&lang=ru_RU" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        var myMap;
+        var myRoute;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(centerPosition);
+        } else {
+            alert(`Ошибка в определении!`);
+        }
+
+        function centerPosition(position) {
+            ymaps.ready(init);
+
+            function init(){
+                myMap = new ymaps.Map("map", {
+                    center: [position.coords.latitude, position.coords.longitude],
+                    zoom: 16,
+                    controls: ['zoomControl', 'typeSelector', 'routePanelControl']
+                });
+
+                myGeoObject = new ymaps.GeoObject({
+                    geometry: {
+                        type: "Point",
+                        coordinates: [position.coords.latitude, position.coords.longitude]
+                    },
+                    properties: {
+                        iconContent: 'Sodikov'
+                    }
+                }, {
+                    preset: 'islands#blackStretchyIcon',
+                    draggable: true
+                })
+                myMap.geoObjects.add(myGeoObject)
+            }
+        }
+
+        function makeRoute(){
+            var pointFrom = document.getElementById('pointFrom').value
+            var pointTo = document.getElementById('pointTo').value
+    
+            if (pointFrom == ''){
+                alert('Не ввели адрес!');
+                document.getElementById('pointFrom').focus();
+                return;
+            } else if (pointTo == ''){
+                alert('Введите адрес!');
+                document.getElementById('pointTo').focus();
+                return;
+            }
+            myRoute = new ymaps.multiRouter.MultiRoute({
+                referencePoints: [pointFrom, pointTo],
+                params: {
+                    routingMode: "auto",
+                    avoidTrafficJams: true
+                }
+            }, {
+                routeActiveStrokeWidth: 8,
+                routeActiveStrokeStyle: 'solid',
+                routeActiveStrokeColor: "#39E444",
+                boundsAutoApply: true
+            });
+            myMap.geoObjects.add(myRoute);
+
+            myRoute.model.events.add('requestsuccess', function(){
+                var activeRoute = myRoute.getActiveRoute();
+                activeRoute.balloon.open();
+            })
+        }
+
+        function clearMap(){
+            myMap.geoObjects.removeAll();
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: monospace;
+        }
+        .button {
+            padding: 2px;
+            margin: 2px;
+            border: solid 1px;
+            border-radius: 5px;
+            height: 25px;
+        }
+        .input {
+            padding: 2px;
+            margin: 2px;
+            border: solid 1px;
+            border-radius: 5px;
+            height: 25px;
+        }
+        .input:hover {
+            transform: translateY(-1px)
+        }
+        #map {
+            margin: 2px;
+            border: solid 1px;
+        }
+        h1 {
+            padding: 2px;
+            margin: 2px;
+        }
+        body {
+            background-color: floralwhite;
+        }
+        .parent {
+            text-align: center;
+        }
+        .child {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">
+            <h1>Содиков Фарход ПИ19-1 Yandex-Карта</h1>
+            <input class="input" id="pointFrom" name="text" placeholder="Откуда ... " required  size="40">
+            <input class="input" id="pointTo" name="text" placeholder="Куда ... " required  size="40">
+            <input class="button" type="button" value="Составить маршрут" onclick="makeRoute()">
+            <input class="button" type="button" value="Очистить карту" onclick="clearMap()">
+        </div>
+
+        <div class="child" id="map" style="width: 1250px; height: 750px"></div>
+    </div>
+</body>
+</html>

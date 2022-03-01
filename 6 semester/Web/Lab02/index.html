@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 02 (Scoring)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="http://localhost:3000/scoring" method="post">
+        <h1>Form to fill</h1>
+        <p><i>Please fill out the form</i></p>
+        <fieldset>
+            <legend>Contacts</legend>
+                <label for="name">Name<em>*</em></label>
+                <input type="text" id="name" name="name" placeholder="Farkhod..." autofocus required><br>
+                <label for="telephone">Telephone</label>
+                <input type="text" id="telephone" name="telephone" placeholder="+7-(999)-999-99-99 ... "><br>
+                <label for="email">E-mail<em>*</em></label>
+                <input type="text" id="email" name="email" placeholder="farkhod@gmail.ru ... " required><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Data to verify</legend>
+                <label for="gender">Sex</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="Female">Female</option>
+                </select><br>
+
+                <label for="birhdate">Date of Birth</label>
+                <input type="date" name="birhdate" id="birhdate" required><br>
+
+                <label for="periodOfLife">Length of stay in the region<em>*</em></label>
+                <input type="number" name="periodOfLife" id="periodOfLife" min="0" max="100" required><br>
+
+                <label for="profession">Profession</label>
+                <select name="profession" id="profession">
+                    <option value="driver">Driver</option>
+                    <option value="policeman">Policeman</option>
+                    <option value="pilot">Pilot</option>
+                    <option value="judged">Judged</option>
+                    <option value="developer">Developer</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="other">Other</option>
+                </select><br>
+                
+                <label for="sphere">Field of activity</label>
+                <select name="sphere" id="sphere">
+                    <option value="public">Public organization</option>
+                    <option value="other">Other</option>
+                </select><br>
+
+                <label for="periodOfWork">Length of work in the organization<em>*</em></label>
+                <input type="number" name="periodOfWork" id="periodOfWork" min="0" max="50" required><br>
+
+                <label for="bankAccount">Having a bank account</label>
+                <input type="checkbox" name="bankAccount" id="bankAccount"><br>
+        </fieldset>
+    </form>
+</body>
+</html>

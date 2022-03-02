@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Clicker</string>
+    <string name="click_me">Plus +1</string>
+    <string name="click2_me">Minus -1</string>
+    <string name="click3_me">Reset 0</string>
+</resources>

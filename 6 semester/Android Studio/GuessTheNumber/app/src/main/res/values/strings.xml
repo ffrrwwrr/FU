@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Угадай число</string>
+    <string name="btn_text">Сделать выбор</string>
+    <string name="header_text">Угадайте число от 1 до 100</string>
+    <string name="result_info">Введите число</string>
+    <string name="win">Gratz!</string>
+    <string name="less">Загаданное число меньше вашего</string>
+    <string name="bigger">Загаданное число больше вашего</string>
+    <string name="out_of_range">Диапазон чисел от 0 до 100!</string>
+    <string name="exception">Введите число!</string>
+</resources>

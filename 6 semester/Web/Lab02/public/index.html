@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab 02 (Scoring)</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card">
@@ -63,8 +63,18 @@
                     <label for="insurancePolicy">нал страх пол</label>
                     <input type="checkbox" name="insurancePolicy" id="insurancePolicy"><br>
             </fieldset>
-            <input type="submit" value="Send">
+            <input type="submit" value="Send" id="button">
         </form>
     </div>
+
+    <script>
+        let btn = document.getElementById("button")
+
+        btn.addEventListener("click", function(e) {
+            name = getElementById("name").value
+            localStorage.setItem("inputValue", name)
+        })
+    </script>
+
 </body>
 </html>

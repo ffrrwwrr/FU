@@ -1,80 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Lab 02 (Scoring)</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="card">
-        <form action="http://localhost:3000/scoring" method="post">
-            <h1 style="text-align: center">Form to fill</h1>
-            <p style="text-align: center"><i>Please fill out the form</i></p>
-            <fieldset style="margin-bottom: 25px;">
-                <legend>Contacts</legend>
-                    <label for="name">Name<em>*</em></label>
-                    <input type="text" id="name" name="name" placeholder="Farkhod ..." value="Farkhod" autofocus required><br>
-                    <label for="telephone">Telephone</label>
-                    <input type="text" id="telephone" name="telephone" placeholder="+7-(999)-999-99-99 ... " value="+7-(999)-999-99-99"><br>
-                    <label for="email">E-mail<em>*</em></label>
-                    <input type="email" id="email" name="email" placeholder="farkhod@gmail.ru ... " value="farkhod@gmail.ru" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required><br>
-            </fieldset>
-            
-            <fieldset>
-                <legend>Data to verify</legend>
-                    <label for="gender">Sex</label>
-                    <select name="gender" id="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select><br>
-    
-                    <label for="birhdate">Date of Birth</label>
-                    <input type="date" name="birhdate" id="birhdate" required><br>
-    
-                    <label for="periodOfLife">Length of stay in the region<em>*</em></label>
-                    <input type="number" name="periodOfLife" id="periodOfLife" min="0" max="100" value="20" required><br>
-    
-                    <label for="profession">Profession</label>
-                    <select name="profession" id="profession">
-                        <option value="driver">Driver</option>
-                        <option value="policeman">Policeman</option>
-                        <option value="pilot">Pilot</option>
-                        <option value="judged">Judged</option>
-                        <option value="developer">Developer</option>
-                        <option value="teacher">Teacher</option>
-                        <option value="other">Other</option>
-                    </select><br>
-                    
-                    <label for="sphere">Field of activity</label>
-                    <select name="sphere" id="sphere">
-                        <option value="public">Public organization</option>
-                        <option value="other">Other</option>
-                    </select><br>
-    
-                    <label for="periodOfWork">Length of work in the organization<em>*</em></label>
-                    <input type="number" name="periodOfWork" id="periodOfWork" min="0" max="50" value="4" required><br>
-    
-                    <label for="bankAccount">Having a bank account</label>
-                    <input type="checkbox" name="bankAccount" id="bankAccount"><br>
+      <form action="http://localhost:3000/scoring" method="post">
+        <h1 style="text-align: center">Form to fill</h1>
+        <p style="text-align: center"><i>Please fill out the form</i></p>
+        <fieldset style="margin-bottom: 25px">
+          <legend>Contacts</legend>
+          <label for="name">Name<em>*</em></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Farkhod ..."
+            value="Farkhod"
+            autofocus
+            required
+          /><br />
+          <label for="telephone">Telephone</label>
+          <input
+            type="text"
+            id="telephone"
+            name="telephone"
+            placeholder="+7-(999)-999-99-99 ... "
+            value="+7-(999)-999-99-99"
+          /><br />
+          <label for="email">E-mail<em>*</em></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="farkhod@gmail.ru ... "
+            value="farkhod@gmail.ru"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
+          /><br />
+        </fieldset>
 
-                    <label for="realEstate">Availability of real estate.</label>
-                    <input type="checkbox" name="realEstate" id="realEstate"><br>
+        <fieldset>
+          <legend>Data to verify</legend>
+          <label for="gender">Sex</label>
+          <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option></select
+          ><br />
 
-                    <label for="insurancePolicy">нал страх пол</label>
-                    <input type="checkbox" name="insurancePolicy" id="insurancePolicy"><br>
-            </fieldset>
-            <input type="submit" value="Send" id="button">
-        </form>
+          <label for="birhdate">Date of Birth</label>
+          <input type="date" name="birhdate" id="birhdate" required /><br />
+
+          <label for="periodOfLife"
+            >Length of stay in the region<em>*</em></label
+          >
+          <input
+            type="number"
+            name="periodOfLife"
+            id="periodOfLife"
+            min="0"
+            max="100"
+            value="20"
+            required
+          /><br />
+
+          <label for="profession">Profession</label>
+          <select name="profession" id="profession">
+            <option value="driver">Driver</option>
+            <option value="policeman">Policeman</option>
+            <option value="pilot">Pilot</option>
+            <option value="judged">Judged</option>
+            <option value="developer">Developer</option>
+            <option value="teacher">Teacher</option>
+            <option value="other">Other</option></select
+          ><br />
+
+          <label for="sphere">Field of activity</label>
+          <select name="sphere" id="sphere">
+            <option value="public">Public organization</option>
+            <option value="other">Other</option></select
+          ><br />
+
+          <label for="periodOfWork"
+            >Length of work in the organization<em>*</em></label
+          >
+          <input
+            type="number"
+            name="periodOfWork"
+            id="periodOfWork"
+            min="0"
+            max="50"
+            value="4"
+            required
+          /><br />
+
+          <label for="bankAccount">Having a bank account</label>
+          <input type="checkbox" name="bankAccount" id="bankAccount" /><br />
+
+          <label for="realEstate">Availability of real estate.</label>
+          <input type="checkbox" name="realEstate" id="realEstate" /><br />
+
+          <label for="insurancePolicy">нал страх пол</label>
+          <input
+            type="checkbox"
+            name="insurancePolicy"
+            id="insurancePolicy"
+          /><br />
+        </fieldset>
+        <input type="submit" value="Send" id="button" />
+      </form>
     </div>
 
     <script>
-        let btn = document.getElementById("button")
+      let btn = document.getElementById("button");
 
-        btn.addEventListener("click", function(e) {
-            name = getElementById("name").value
-            localStorage.setItem("inputValue", name)
-        })
+      btn.addEventListener("click", function (e) {
+        name = getElementById("name").value;
+        localStorage.setItem("inputValue", name);
+      });
     </script>
-
-</body>
+  </body>
 </html>
